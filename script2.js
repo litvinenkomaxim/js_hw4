@@ -4,12 +4,12 @@
 // at 20 min
 
 function min() {
-    let a = arguments[0];
-    for (let i = 0; i < arguments.length; i++) {
-        if (a > arguments[i]) {
-            a = arguments[i]
-        }
+  let a = arguments[0];
+  for (let i = 0; i < arguments.length; i++) {
+    if (a > arguments[i]) {
+      a = arguments[i]
     }
-    return (a)
+  }
+  return (a)
 }
 console.log(min(30, 1, 100, 500, 100500))
