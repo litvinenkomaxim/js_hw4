@@ -5,8 +5,6 @@ getSum, getDiff, getMulti, getDiv.Методы объекта
 Для расчетов все методы используют функционал ранее
  созданного калькулятора. */
 me = {
-  // x: 0,
-  // y: 0,
   getSum(a, b) {
     this.x = a;
     this.y = b;
@@ -26,7 +24,7 @@ me = {
     this.x = a;
     this.y = b;
     return `x - y = ${this.x - this.y}`
-  }
+  },
 }
 alert(me.getSum(1, 1));
 alert(me.getDiv(1, 0));
