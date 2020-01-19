@@ -2,29 +2,19 @@
 параметров функции с использованием только рекурсии:
 */
 
-function sum() {
-  let a = arguments.length;
-  if (a == 1) {
-    return result;
+let sum = function (...a) {
+  if (a.length == 0) {
+    return 0
   } else {
-    result = ;
-    return result
-  }
 
-  console.log(a);
-  let result =
-}
-
-
-console.log(sum(1, 2, 3, 4, 5)); // 15
-
-
-function pow(x, n) {
-  if (n == 1) {
-    return x;
-  } else {
-    return x * pow(x, n - 1);
+    return a.pop() + sum(...a);
   }
 }
+console.log(sum(1, 2, 3, 4, 44, 6, 7, 52));
 
-console.log(pow(2, 3)); // 8
+b = [1, 2, 3, 4, 44, 6, 7, 52]
+
+console.log(b);
+console.log(b.pop());
+console.log(b);
+// console.log(b.pop() + sum(...a));

@@ -2,15 +2,11 @@
 Создайте функцию format с параметрами start и end:*/
 
 let user = {
-  name: 'ivan',
-  /*format(start, end) {
-    console.log(start + this.name + end);
-  }*/
+  name: "John",
 }
 
 function format(start, end) {
   console.log(start + this.name + end);
 }
-
-
-user.format.bind(user, '<<<', '>>>'); // <<<John>>>
+let userFormat = format.bind(user)
+userFormat('<<<', '>>>'); // <<<John>>>
