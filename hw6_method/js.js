@@ -67,7 +67,6 @@ class Line2 extends Figure {
         }
       }
     }
-
     ctx.stroke()
     ctx.closePath()
   }
