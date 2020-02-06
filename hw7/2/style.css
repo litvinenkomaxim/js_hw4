@@ -1,0 +1,35 @@
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+  /* color: rgb(255, 255, 255); */
+  text-align: center;
+}
+
+body {
+  margin: 50px;
+  /* background-image: url(https://image.freepik.com/free-vector/_42349-17.jpg); */
+}
+
+h3 {
+  padding-top: 120px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+
+main {
+  margin-top: 150px;
+  padding: 0 150px 0;
+}
+
+figure {
+  height: 250px;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+}
