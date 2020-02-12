@@ -5,7 +5,7 @@ var $bookList = $('#book-list'),
   $searchForm = $('#search-form'),
   $clipList = $('#clip-list'),
   $carouselExampleControls = $('#carouselExampleControls'),
-  $carouselbtnbtn = $('#carousel-btn-btn');
+  $carouselbtnbtn = $('#carouselbtnbtn1');
 
 
 $currentBook.hide(); //display none
@@ -45,7 +45,7 @@ function getBook(query) {
         {
           if (i == 0) {
             $(` <div class = "carousel-item elem active" >
-              <video controls="controls" poster = "${item.artworkUrl100}">
+              <video class="videovideo" controls="controls" poster = "${item.artworkUrl100}">
                 <source src = "${item.previewUrl}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 <a href = "${item.previewUrl}> Скачайте видео</a>. 
               </video>
@@ -54,7 +54,7 @@ function getBook(query) {
           } else {
             // console.log("i=0 false")
             $(` <div class = "carousel-item elem" >
-              <video controls="controls" poster = "${item.artworkUrl100}">
+              <video class="videovideo" controls="controls" poster = "${item.artworkUrl100}">
                 <source src = "${item.previewUrl}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 <a href = "${item.previewUrl}> Скачайте видео</a>. 
               </video>
@@ -66,8 +66,32 @@ function getBook(query) {
     }).fail(function (error) {});
 }
 
-$carouselbtnbtn.on('click', function (event) {
-  console.log('event', click)
+/*$carouselbtnbtn.on('click', function (event) {
+  console.log('event', event)
   event.preventDefault();
   console.log('this', this)
-})
+
+})*/
+
+carouselbtnbtn1.onclick = function () {
+  console.log('stop video')
+};
+carouselbtnbtn2.onclick = function () {
+  console.log('stop video')
+};
+
+var target = $('.videovideo');
+var targetPos = target.offset().top;
+var targetHeight = target.height();
+var winHeight = $(window).height();
+var scrollToElem = targetPos - winHeight;
+
+$("window").scroll(function () {
+  var winScrollTop = $(this).scrollTop();
+  if (winScrollTop > scrollToElem && winScrollTop < scrollToElem + winHeight + targetHeight) {
+    //Сработает, когда пользователь доскроллит до элемента с классом .elem
+    $('.videovideo').play();
+  } else {
+    $('.videovideo').stop();
+  }
+});
