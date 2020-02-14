@@ -77,9 +77,16 @@ carouselbtnbtn1.onclick = function () {
   console.log('stop video')
 };
 carouselbtnbtn2.onclick = function () {
+  function pauseClip(media) {
+    media.pause();
+  }
+  var myVideo = document.getElementsByClassName("videovideo");
+  pauseClip(myVideo);
+
+  console.log(myVideo)
   console.log('stop video')
 };
-
+/*
 var target = $('.videovideo');
 var targetPos = target.offset().top;
 var targetHeight = target.height();
@@ -94,4 +101,10 @@ $("window").scroll(function () {
   } else {
     $('.videovideo').stop();
   }
-});
+}); */
+
+function pauseClip(media) {
+  media.pause();
+}
+var myVideo = document.getElementsByClassName("videovideo");
+console.log(myVideo)

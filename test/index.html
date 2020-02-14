@@ -1,8 +1,50 @@
-<input id="pdv" type="button" value="Нажми меня!">
+<div class="carousel-item elem">
+  <video class="videovideo" controls="controls" id="video-example-1"
+    poster="https://is1-ssl.mzstatic.com/image/thumb/Video50/v4/f0/68/01/f06801ef-1b44-5131-327e-0bd0d138bb97/source/100x100bb.jpg">
+    <source
+      src="https://video-ssl.itunes.apple.com/itunes-assets/Video125/v4/fb/d0/ed/fbd0ed9b-7e90-05f1-e118-dfbc5ca7aa0e/mzvf_3400135729811241824.640x480.h264lc.U.p.m4v"
+      type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+  </video></div>
 
+
+<div>
+  <video class="pure-u-1 pure-u-md-2-3 pure-u-xl-1-3" controls=""
+    poster="/content/uploads/userfiles/files/2015/08/196/video-poster.png">
+    <source
+      src="https://video-ssl.itunes.apple.com/itunes-assets/Video125/v4/fb/d0/ed/fbd0ed9b-7e90-05f1-e118-dfbc5ca7aa0e/mzvf_3400135729811241824.640x480.h264lc.U.p.m4v"
+      type="video/mp4">
+    <source src="/content/uploads/userfiles/files/2015/08/196/html5-video-example.webm" type="video/webm">
+    <source src="/content/uploads/userfiles/files/2015/08/196/html5-video-example.ogv" type="video/ogg">
+    <track default="" kind="subtitles" label="RU" src="/content/uploads/userfiles/files/2015/08/196/subtitles-ru.vtt"
+      srclang="ru">
+    <track kind="subtitles" label="EN" src="/content/uploads/userfiles/files/2015/08/196/subtitles.vtt" srclang="en">
+    <p>HTML5 video не поддерживается вашим браузером.</p>
+  </video>
+</div>
+
+<p><input class="pure-button button-blue" onclick="pauseClip(myVideo);" type="button" value="Pause"> <input
+    class="pure-button button-blue" onclick="playClip(myVideo);" type="button" value="Play"></p>
 
 <script>
-  pdv.onclick = function () {
-    alert('Спасибо');
-  };
+  //JS функции для работы с примером:
+  //остановка воспроизведения видео примера
+  function pauseClip(media) {
+    media.pause();
+  }
+
+  //старт воспроизведения видео примера
+  function playClip(media) {
+    media.play();
+  }
+
+  //Использование и демонстрация:
+  //получим медиа объект в переменную
+  var myVideo = document.getElementById("video-example-1");
+  console.log(myVideo)
+  //var myVideo = document.getElementsByClassName("videovideo");
+  var myCarousel = document.getElementsByClassName("carousel-item");
+  console.log('karusel', myCarousel)
+  //запуск функций по onclick для кнопок:
+  pauseClip(myVideo); //для кнопки "Pause"
+  playClip(myVideo); //для кнопки "Play"
 </script>
