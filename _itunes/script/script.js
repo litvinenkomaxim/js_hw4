@@ -40,71 +40,34 @@ function getBook(query) {
       $bookList.empty();
 
       console.log('allll', allClipsMass);
-      allClipsMass.forEach(function (item, i, clip)
+      allClipsMass.forEach(function (item) {
 
-        {
-          if (i == 0) {
-            $(` <div class = "carousel-item elem active" >
-              <video class="videovideo" controls="controls" poster = "${item.artworkUrl100}">
-                <source src = "${item.previewUrl}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                <a href = "${item.previewUrl}> Скачайте видео</a>. 
-              </video>
-            < /div>`).attr('data-id', item.trackName)
-              .appendTo($clipList);
-          } else {
-            // console.log("i=0 false")
-            $(` <div class = "carousel-item elem" >
-              <video class="videovideo" controls="controls" poster = "${item.artworkUrl100}">
-                <source src = "${item.previewUrl}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                <a href = "${item.previewUrl}> Скачайте видео</a>. 
-              </video>
-            < /div>`).attr('data-id', clip.trackName)
-              .appendTo($clipList);
-          }
-        }
-      );
+        const video = $(`<video class="d-block w-100 video">`)
+          .attr("src", item.previewUrl)
+          .attr("controls", "controls");
+
+        $($clipList).append($(`<div class="carousel-item">`).append(video));
+
+        if (allClipsMass[0]) {
+          $('.carousel-item:first').addClass('active');
+        };
+      });
     }).fail(function (error) {});
 }
 
-/*$carouselbtnbtn.on('click', function (event) {
-  console.log('event', event)
-  event.preventDefault();
-  console.log('this', this)
 
-})*/
+$('.carousel').carousel({
+  interval: false
+});
 
-carouselbtnbtn1.onclick = function () {
-  console.log('stop video')
-};
-carouselbtnbtn2.onclick = function () {
-  function pauseClip(media) {
-    media.pause();
-  }
-  var myVideo = document.getElementsByClassName("videovideo");
-  pauseClip(myVideo);
+$('.carousel-control-next').on('click', function () {
+  let pausa = $('.active > .video');
+  console.log(pausa);
+  pausa[0].pause();
+});
 
-  console.log(myVideo)
-  console.log('stop video')
-};
-/*
-var target = $('.videovideo');
-var targetPos = target.offset().top;
-var targetHeight = target.height();
-var winHeight = $(window).height();
-var scrollToElem = targetPos - winHeight;
-
-$("window").scroll(function () {
-  var winScrollTop = $(this).scrollTop();
-  if (winScrollTop > scrollToElem && winScrollTop < scrollToElem + winHeight + targetHeight) {
-    //Сработает, когда пользователь доскроллит до элемента с классом .elem
-    $('.videovideo').play();
-  } else {
-    $('.videovideo').stop();
-  }
-}); */
-
-function pauseClip(media) {
-  media.pause();
-}
-var myVideo = document.getElementsByClassName("videovideo");
-console.log(myVideo)
+$('.carousel-control-prev').on('click', function () {
+  let pausa = $('.active > .video');
+  console.log(pausa);
+  pausa[0].pause();
+});
