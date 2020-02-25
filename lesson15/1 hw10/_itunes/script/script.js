@@ -42,32 +42,10 @@ function getBook(query) {
       console.log('allll', allClipsMass);
       allClipsMass.forEach(function (item) {
 
-        const video = $(`<video class="d-block w-100 video">`)
+        const video = $(`<video>`)
           .attr("src", item.previewUrl)
           .attr("controls", "controls");
-
         $($clipList).append($(`<div class="carousel-item">`).append(video));
-
-        if (allClipsMass[0]) {
-          $('.carousel-item:first').addClass('active');
-        };
       });
     }).fail(function (error) {});
 }
-
-
-$('.carousel').carousel({
-  interval: false
-});
-
-$('.carousel-control-next').on('click', function () {
-  let pausa = $('.active > .video');
-  console.log(pausa);
-  pausa[0].pause();
-});
-
-$('.carousel-control-prev').on('click', function () {
-  let pausa = $('.active > .video');
-  console.log(pausa);
-  pausa[0].pause();
-});
