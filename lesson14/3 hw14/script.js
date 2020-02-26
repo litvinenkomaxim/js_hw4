@@ -20,8 +20,12 @@ divDiv.style.background = "red"
 divDiv.style.height = "400px"
 divDiv.style.width = "400px"
 divDiv.onmousemove = function () {
-  pageCoordinates.innerHTML = event.clientX + ':' + event.clientY;
+  // pageCoordinates.innerHTML = event.clientX + ':' + event.clientY;
   blockCoordinates.innerHTML = event.offsetX + ':' + event.offsetY;
+}
+
+document.onmousemove = function () {
+  pageCoordinates.innerHTML = event.clientX + ':' + event.clientY;
 }
 
 const blockCoordinates = document.createElement("h2");
