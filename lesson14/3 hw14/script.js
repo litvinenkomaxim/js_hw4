@@ -9,6 +9,7 @@
 */
 
 const body = document.querySelector("body");
+const html = document.querySelector("html");
 const h2 = document.createElement("h2");
 h2.innerHTML = 'События';
 body.appendChild(h2);
@@ -24,7 +25,7 @@ divDiv.onmousemove = function () {
   blockCoordinates.innerHTML = event.offsetX + ':' + event.offsetY;
 }
 
-document.onmousemove = function () {
+html.onmousemove = function () {
   pageCoordinates.innerHTML = event.clientX + ':' + event.clientY;
 }
 
