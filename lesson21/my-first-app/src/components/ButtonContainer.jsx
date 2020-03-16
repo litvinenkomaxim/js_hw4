@@ -6,7 +6,7 @@ class ButtonContainer extends React.Component {
   state = {
     count: 0
   };
-  handleClick = () => {
+  handleClickPlus = () => {
     this.setState(prevState => ({ count: prevState.count + 1 }));
   };
   handleClickMinus = () => {
@@ -21,10 +21,12 @@ class ButtonContainer extends React.Component {
           {this.handleClick}
         </p>
         <CustomButton
-          textPlus={`Plus`}
-          textMinus={'Minus'}
-          handleClick={this.handleClick}
-          handleClickMinus={this.handleClickMinus}
+          text={`Plus`}
+          handleClick={this.handleClickPlus}
+        ></CustomButton>
+        <CustomButton
+          text={'Minus'}
+          handleClick={this.handleClickMinus}
         ></CustomButton>
       </div>
     );

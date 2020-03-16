@@ -13,6 +13,8 @@ function App() {
           alt="logo"
         />
         <MyButton></MyButton>
+        <MyButton></MyButton>
+        <MyButton></MyButton>
       </header>
     </div>
   );
